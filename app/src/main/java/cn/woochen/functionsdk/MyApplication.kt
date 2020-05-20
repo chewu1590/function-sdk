@@ -1,13 +1,18 @@
 package cn.woochen.functionsdk
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
 import com.tencent.smtt.sdk.QbSdk
 
 
 class MyApplication:Application() {
+    companion object{
+        var context:Context?= null
+    }
     override fun onCreate() {
         super.onCreate()
+        context = this
         initX5()
     }
 

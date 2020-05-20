@@ -6,11 +6,12 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import cn.woochen.functionsdk.adapter.MainAdapter
+import cn.woochen.functionsdk.shake.WxShakeActivity
 import cn.woochen.functionsdk.x5.X5WebViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private val mItemNames = mutableListOf("X5内核")
+    private val mItemNames = mutableListOf("X5内核","摇一摇")
     private val mMainAdapter by lazy {
         MainAdapter(this, mItemNames)
     }
@@ -36,8 +37,10 @@ class MainActivity : AppCompatActivity() {
     private fun itemClickEvent(position: Int) {
         when (position) {
             0 -> {
-//                start(X5WebViewActivity::class.java)
                 start(X5WebViewActivity::class.java)
+            }
+            1 -> {
+                start(WxShakeActivity::class.java)
             }
         }
     }
